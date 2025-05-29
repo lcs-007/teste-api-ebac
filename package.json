@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "npx serverest",
-    "test": "npx cypress run"
+    "test": "\"C:\\Program Files\\nodejs\\npx.cmd\" cypress run"
+
   },
   "keywords": [],
   "author": "",
