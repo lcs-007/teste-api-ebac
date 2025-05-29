@@ -3,8 +3,10 @@ const { defineConfig } = require("cypress");
 module.exports = defineConfig({
   e2e: {
     setupNodeEvents(on, config) {
-      // implement node event listeners here
+      // Você pode adicionar eventos aqui se quiser
     },
     baseUrl: "http://localhost:3000/",
+    shell: 'cmd.exe'  // <- Esta é a linha importante
   },
 });
+
