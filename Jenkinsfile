@@ -18,18 +18,10 @@ pipeline {
             }
         }
 
-        stage('Iniciar servidor') {
-            steps {
-                // Inicia o servidor em background
-                bat 'start /B npm run start'
-                // Pausa para garantir que o servidor subiu (aprox. 5 segundos)
-                bat 'ping 127.0.0.1 -n 6 > nul'
-            }
-        }
-
         stage('Executar Testes API') {
             steps {
-                bat 'npx cypress run'
+                // Inicia o servidor e executa os testes Cypress juntos
+                bat 'start /B cmd /c "npm run start & npx cypress run"'
             }
         }
     }
