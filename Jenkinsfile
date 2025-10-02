@@ -22,8 +22,8 @@ pipeline {
             steps {
                 // Inicia o servidor em background
                 bat 'start /B npm run start'
-                // Pequena pausa para garantir que o servidor subiu
-                bat 'timeout /t 5'
+                // Pausa para garantir que o servidor subiu (aprox. 5 segundos)
+                bat 'ping 127.0.0.1 -n 6 > nul'
             }
         }
 
