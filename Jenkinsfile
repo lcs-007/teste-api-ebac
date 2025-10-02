@@ -20,10 +20,10 @@ pipeline {
 
         stage('Iniciar servidor') {
             steps {
-                // Substitua 'npm run start' pelo comando que inicia seu servidor
+                // Inicia o servidor em background
                 bat 'start /B npm run start'
-                // Dá uma pequena pausa para garantir que o servidor subiu
-                bat 'timeout /T 5'
+                // Pequena pausa para garantir que o servidor subiu
+                bat 'timeout /t 5'
             }
         }
 
