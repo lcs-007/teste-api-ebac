@@ -10,13 +10,13 @@ pipeline {
         
         stage('Instalar dependências') {
             steps {
-                sh 'npm install'
+                bat 'npm install'
             }
         }
         
         stage('Executar Testes API') {
             steps {
-                sh 'npx cypress run' // ou 'npm run cy:run' se você tiver esse script
+                bat 'npx cypress run' // ou 'npm run cy:run' se você tiver esse script
             }
         }
     }
