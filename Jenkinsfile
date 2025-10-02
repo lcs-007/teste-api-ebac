@@ -1,6 +1,10 @@
 pipeline {
     agent any
     
+    environment {
+        PATH = "C:\\Program Files\\nodejs;${env.PATH}"
+    }
+
     stages {
         stage('Clonar repositório API') {
             steps {
@@ -16,7 +20,7 @@ pipeline {
         
         stage('Executar Testes API') {
             steps {
-                bat 'npx cypress run' // ou 'npm run cy:run' se você tiver esse script
+                bat 'npx cypress run'
             }
         }
     }
